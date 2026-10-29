@@ -1,0 +1,405 @@
+<title>AI Skill 中文典藏</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="從 Skills.sh、Anthropic、OpenAI Codex 與 Awesome Claude 收錄的 50 個熱門 Agent Skills：中文介紹、用法、原文與全文翻譯。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: catalogue — filter rail on the left, index cards on the right; detail view replaces the list. */
+:root {
+  --bg: #f4f6f2;
+  --surface: #ffffff;
+  --sunk: #eaefea;
+  --ink: #16201d;
+  --muted: #56645f;
+  --line: #d6ded9;
+  --accent: #116b54;
+  --accent-ink: #ffffff;
+  --accent-soft: #dcefe7;
+  --code-bg: #eef2ee;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1412; --surface: #151d1a; --sunk: #1b2521; --ink: #e3ebe7; --muted: #95a59f;
+    --line: #2a3632; --accent: #52c49e; --accent-ink: #062219; --accent-soft: #1d3a30; --code-bg: #111816;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1412; --surface: #151d1a; --sunk: #1b2521; --ink: #e3ebe7; --muted: #95a59f;
+  --line: #2a3632; --accent: #52c49e; --accent-ink: #062219; --accent-soft: #1d3a30; --code-bg: #111816;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1240px; margin: 0 auto; }
+
+header.top { padding-block: 40px 28px; display: grid; gap: 14px; }
+header.top h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(30px, 5vw, 52px); line-height: 1.1; margin: 0; letter-spacing: .01em; text-wrap: balance; }
+header.top p.lede { margin: 0; max-width: 62ch; color: var(--muted); font-size: 16px; }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 6px; }
+.stats div { display: grid; }
+.stats b { font-family: var(--serif); font-size: 26px; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.stats span { color: var(--muted); font-size: 13px; }
+details.method { max-width: 80ch; color: var(--muted); font-size: 13.5px; }
+details.method summary { cursor: pointer; color: var(--ink); font-weight: 500; }
+details.method ul { margin: 8px 0 0; padding-left: 20px; }
+
+.is-detail .stats, .is-detail .lede, .is-detail details.method { display: none; }
+.is-detail header.top { padding-block: 24px 4px; }
+.is-detail header.top h1 { font-size: 22px; }
+.layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 32px; padding-bottom: 64px; }
+@media (max-width: 860px) { .layout { grid-template-columns: minmax(0, 1fr); gap: 20px; } }
+
+aside.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); align-self: start; display: grid; gap: 22px; max-height: calc(100vh - 32px); overflow-y: auto; padding-right: 4px; }
+@media (max-width: 860px) { aside.rail { position: static; max-height: none; overflow: visible; } }
+.rail h2 { font-size: 13px; font-weight: 700; margin: 0 0 8px; color: var(--muted); letter-spacing: .04em; }
+.search { position: relative; }
+.search input[type="search"] { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); }
+.search label.full { display: flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); margin-top: 6px; }
+.facet { display: grid; gap: 2px; }
+.facet button { display: flex; justify-content: space-between; gap: 8px; text-align: left; border: 0; background: none; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+.facet button:hover { background: var(--sunk); }
+.facet button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.facet button .n { font-variant-numeric: tabular-nums; opacity: .75; }
+@media (max-width: 860px) {
+  .facet { display: flex; flex-wrap: wrap; gap: 6px; }
+  .facet button { border: 1px solid var(--line); background: var(--surface); }
+}
+details.tagbox summary { cursor: pointer; font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .04em; margin-bottom: 8px; }
+.trig { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 14px 0 4px; }
+.trig b { display: block; font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.tagcloud { display: flex; flex-wrap: wrap; gap: 6px; }
+.tagcloud button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 2px 10px; font-size: 13px; cursor: pointer; }
+.tagcloud button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.reset { justify-self: start; border: 0; background: none; color: var(--accent); cursor: pointer; padding: 0; text-decoration: underline; font-size: 13.5px; }
+
+.toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
+.toolbar .count { color: var(--muted); }
+.toolbar select { padding: 6px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); }
+
+ol.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.card { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 4px 18px; padding: 18px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; cursor: pointer; text-decoration: none; color: inherit; }
+.card:hover { border-color: var(--accent); }
+.card .rk { font-family: var(--serif); font-weight: 900; font-size: 28px; line-height: 1.1; color: var(--accent); font-variant-numeric: tabular-nums; grid-row: span 2; }
+.card h3 { margin: 0; font-size: 18px; line-height: 1.35; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.card h3 code { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--muted); }
+.card .inst { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.card .inst b { display: block; font-size: 16px; }
+.card .inst span { color: var(--muted); font-size: 12px; }
+.card p { margin: 0; color: var(--muted); grid-column: 2 / 4; }
+.card .chips { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+@media (max-width: 560px) {
+  .card { grid-template-columns: minmax(0, 1fr) auto; padding: 16px; }
+  .card .rk { grid-row: auto; font-size: 22px; }
+  .card h3, .card p, .card .chips { grid-column: 1 / -1; }
+  .card .inst { grid-column: 2; grid-row: 1; }
+}
+.chip { font-size: 12.5px; padding: 1px 9px; border-radius: 999px; background: var(--sunk); color: var(--ink); white-space: nowrap; }
+.chip.cat { background: var(--accent-soft); }
+.chip.site { border: 1px solid var(--line); background: transparent; }
+.empty { padding: 40px 20px; text-align: center; color: var(--muted); background: var(--surface); border-radius: 10px; border: 1px dashed var(--line); }
+
+/* Detail */
+.detail { padding-bottom: 72px; }
+.back { display: inline-flex; gap: 6px; align-items: center; margin: 8px 0 18px; text-decoration: none; font-weight: 500; }
+.dhead { display: grid; gap: 10px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.dhead .kicker { color: var(--muted); font-size: 14px; }
+.dhead h2 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.15; margin: 0; text-wrap: balance; }
+.dhead h2 code { font-family: var(--mono); font-size: .42em; font-weight: 400; color: var(--muted); vertical-align: middle; }
+.dhead .summary { font-size: 17px; max-width: 70ch; margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px 24px; margin: 22px 0; }
+.facts div { display: grid; gap: 2px; min-width: 0; }
+.facts dt { font-size: 12.5px; color: var(--muted); }
+.facts dd { margin: 0; font-weight: 500; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.install { display: flex; gap: 8px; align-items: stretch; flex-wrap: wrap; margin-bottom: 26px; }
+.install code { flex: 1 1 320px; min-width: 0; font-family: var(--mono); font-size: 13px; background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; overflow-x: auto; white-space: nowrap; }
+.btn { text-decoration: none; display: inline-flex; align-items: center; border: 0; background: var(--accent); color: var(--accent-ink); border-radius: 8px; padding: 9px 16px; font-weight: 500; cursor: pointer; }
+.btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.section-h { font-family: var(--serif); font-weight: 600; font-size: 22px; margin: 30px 0 10px; }
+.usage { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 6px 22px; }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-top: 34px; overflow-x: auto; }
+.tabs button { border: 0; background: none; padding: 10px 16px; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.panel { padding-top: 6px; }
+.compare { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+.compare > div { min-width: 0; }
+.compare h4 { position: sticky; top: env(safe-area-inset-top, 0px); background: var(--bg); margin: 0; padding: 10px 0; font-size: 13px; color: var(--muted); z-index: 1; }
+@media (max-width: 900px) { .compare { grid-template-columns: minmax(0, 1fr); } }
+.notice { background: var(--accent-soft); border-radius: 10px; padding: 16px 20px; margin-top: 20px; }
+.desc-en { color: var(--muted); font-size: 14px; }
+
+/* Rendered markdown */
+.md { max-width: 78ch; }
+.compare .md { max-width: none; }
+.md h1, .md h2, .md h3, .md h4 { font-family: var(--serif); font-weight: 600; line-height: 1.35; margin: 1.6em 0 .5em; text-wrap: balance; }
+.md h1 { font-size: 26px; } .md h2 { font-size: 21px; } .md h3 { font-size: 18px; } .md h4 { font-size: 16px; }
+.md p, .md ul, .md ol, .md blockquote { margin: .7em 0; }
+.md li { margin: .2em 0; }
+.md code { font-family: var(--mono); font-size: .88em; background: var(--code-bg); padding: .1em .35em; border-radius: 4px; overflow-wrap: anywhere; }
+.md pre { background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; overflow-x: auto; font-size: 13px; line-height: 1.55; }
+.md pre code { background: none; padding: 0; overflow-wrap: normal; }
+.md table { display: block; overflow-x: auto; border-collapse: collapse; font-size: 14px; max-width: 100%; }
+.md th, .md td { border: 1px solid var(--line); padding: 6px 10px; vertical-align: top; text-align: left; }
+.md th { background: var(--sunk); }
+.md blockquote { border-left: 3px solid var(--accent); margin-left: 0; padding: 2px 16px; color: var(--muted); }
+.md img { max-width: 100%; height: auto; }
+.md hr { border: 0; border-top: 1px solid var(--line); margin: 1.6em 0; }
+.front { font-size: 13px; }
+.front summary { cursor: pointer; color: var(--muted); }
+
+footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 13px; }
+.toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 16px; border-radius: 8px; font-size: 14px; }
+@media (prefers-reduced-motion: no-preference) { .card { transition: border-color .15s; } }
+</style>
+<!--BODY-->
+<div class="wrap" id="app">
+  <header class="top">
+    <h1><a href="#" style="color:inherit;text-decoration:none">AI Skill 中文典藏</a></h1>
+    <p class="lede">從 Skills.sh 熱門排行、Anthropic 官方、OpenAI Codex 官方與 Awesome Claude 精選清單收錄的 50 個 Agent Skills。每一個都附中文介紹、用法、安裝指令、英文原文與全文中文翻譯。</p>
+    <div class="stats" id="stats"></div>
+    <details class="method">
+      <summary>收錄方式與資料來源</summary>
+      <ul id="method"></ul>
+    </details>
+  </header>
+  <div id="view"></div>
+  <footer class="foot" id="foot"></footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById('data').textContent);
+  const SK = DATA.skills;
+  const bySlug = Object.fromEntries(SK.map(s => [s.slug, s]));
+  const CATS = [...new Set(SK.map(s => s.category))];
+  const SITES = ['Skills.sh', 'Anthropic 官方', 'OpenAI Codex', 'Awesome Claude'];
+  const TAGS = Object.entries(SK.flatMap(s => s.tags).reduce((m, t) => (m[t] = (m[t] || 0) + 1, m), {}))
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hant'));
+  const state = { q: '', full: false, cat: '', site: '', tags: new Set(), sort: 'rank' };
+  const view = document.getElementById('view');
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const fmt = n => n == null ? '—' : n >= 10000 ? (n / 10000).toFixed(n >= 1e6 ? 0 : 1) + ' 萬' : n.toLocaleString('zh-Hant');
+  const installCmd = s => `npx skills add https://github.com/${s.repo} --skill ${s.slug}`;
+
+  // Stats + method
+  const withInst = SK.filter(s => s.installs).reduce((a, s) => a + s.installs, 0);
+  document.getElementById('stats').innerHTML = [
+    [SK.length, '個 Skills'], [CATS.length, '個分類'], [TAGS.length, '個標籤'],
+    [fmt(withInst), 'Skills.sh 累計安裝'], [DATA.updated, '資料日期']
+  ].map(([b, t]) => `<div><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join('');
+  document.getElementById('method').innerHTML = [
+    DATA.method,
+    'Skills.sh 與 SkillsMP、Skill Store 網站本身在收集環境中無法連線；Skills.sh 排行改用 GitHub 上每日更新的開放鏡像資料（LinklyAI/best-skills，CC BY 4.0），SkillsMP 與 Skill Store 暫未收錄。',
+    '原文直接取自各 skill 的 GitHub 儲存庫 SKILL.md；翻譯為繁體中文，程式碼區塊保留原樣。飛書 lark-* 原文為簡體中文，以 OpenCC 轉為台灣繁體。',
+    'Anthropic 的 docx、pdf、pptx、xlsx 為專有授權，Remotion 未標示授權：這 5 個只提供中文介紹與用法，原文請點來源連結閱讀。'
+  ].map(t => `<li>${esc(t)}</li>`).join('');
+  document.getElementById('foot').innerHTML = `資料整理於 ${esc(DATA.updated)}。各 skill 版權屬原作者，授權見各項目的「授權」欄。排名數字為本典藏的推薦順序；Skills.sh 排名與安裝數為全站歷史累計。`;
+
+  function matches(s) {
+    if (state.cat && s.category !== state.cat) return false;
+    if (state.site && !s.sites.includes(state.site)) return false;
+    for (const t of state.tags) if (!s.tags.includes(t)) return false;
+    if (state.q) {
+      const q = state.q.toLowerCase();
+      const hay = [s.title, s.slug, s.summary, s.category, s.tags.join(' '), s.description_en, s.repo]
+        .concat(state.full ? [s.translation, s.original, s.usage] : []).join('\n').toLowerCase();
+      if (!q.split(/\s+/).every(w => hay.includes(w))) return false;
+    }
+    return true;
+  }
+  function sorted(list) {
+    const l = list.slice();
+    if (state.sort === 'installs') l.sort((a, b) => (b.installs || 0) - (a.installs || 0) || a.rank - b.rank);
+    else if (state.sort === 'cat') l.sort((a, b) => CATS.indexOf(a.category) - CATS.indexOf(b.category) || a.rank - b.rank);
+    else if (state.sort === 'name') l.sort((a, b) => a.slug.localeCompare(b.slug));
+    else l.sort((a, b) => a.rank - b.rank);
+    return l;
+  }
+  const facet = (items, key, label) => `<div class="facet" role="group" aria-label="${label}">
+      <button type="button" data-${key}="" aria-pressed="${!state[key]}"><span>全部</span><span class="n">${SK.length}</span></button>
+      ${items.map(([v, n]) => `<button type="button" data-${key}="${esc(v)}" aria-pressed="${state[key] === v}"><span>${esc(v)}</span><span class="n">${n}</span></button>`).join('')}
+    </div>`;
+
+  function renderList() {
+    document.getElementById('app').classList.remove('is-detail');
+    const catCounts = CATS.map(c => [c, SK.filter(s => s.category === c).length]);
+    const siteCounts = SITES.map(c => [c, SK.filter(s => s.sites.includes(c)).length]);
+    view.innerHTML = `<div class="layout">
+      <aside class="rail">
+        <div class="search">
+          <h2><label for="q">搜尋</label></h2>
+          <input id="q" type="search" placeholder="名稱、標籤、用途…" value="${esc(state.q)}" autocomplete="off">
+          <label class="full"><input id="full" type="checkbox" ${state.full ? 'checked' : ''}> 同時搜尋原文與翻譯全文</label>
+        </div>
+        <div><h2>分類</h2>${facet(catCounts, 'cat', '分類')}</div>
+        <div><h2>收錄來源</h2>${facet(siteCounts, 'site', '收錄來源')}</div>
+        <details class="tagbox" id="tagbox"><summary>標籤（${TAGS.length}）</summary><div class="tagcloud" id="tags">${TAGS.map(([t, n]) => `<button type="button" data-tag="${esc(t)}" aria-pressed="${state.tags.has(t)}" title="${n} 個">${esc(t)}</button>`).join('')}</div></details>
+        <button type="button" class="reset" id="reset">清除所有篩選</button>
+      </aside>
+      <section aria-label="Skill 清單">
+        <div class="toolbar"><span class="count" id="count"></span>
+          <label>排序 <select id="sort">
+            <option value="rank">推薦順序</option><option value="installs">Skills.sh 安裝數</option>
+            <option value="cat">分類</option><option value="name">英文名稱</option></select></label>
+        </div>
+        <ol class="cards" id="cards"></ol>
+      </section></div>`;
+    document.getElementById('sort').value = state.sort;
+    if (matchMedia('(min-width: 861px)').matches || state.tags.size) document.getElementById('tagbox').open = true;
+    renderCards();
+    const q = document.getElementById('q');
+    q.addEventListener('input', () => { state.q = q.value.trim(); renderCards(); });
+    document.getElementById('full').addEventListener('change', e => { state.full = e.target.checked; renderCards(); });
+    document.getElementById('sort').addEventListener('change', e => { state.sort = e.target.value; renderCards(); });
+    document.getElementById('reset').addEventListener('click', () => { Object.assign(state, { q: '', full: false, cat: '', site: '', tags: new Set() }); renderList(); });
+    view.querySelectorAll('[data-cat],[data-site]').forEach(b => b.addEventListener('click', () => {
+      const key = b.hasAttribute('data-cat') ? 'cat' : 'site';
+      state[key] = b.dataset[key];
+      view.querySelectorAll(`[data-${key}]`).forEach(x => x.setAttribute('aria-pressed', String(x.dataset[key] === state[key])));
+      renderCards();
+    }));
+    view.querySelectorAll('[data-tag]').forEach(b => b.addEventListener('click', () => {
+      const t = b.dataset.tag;
+      state.tags.has(t) ? state.tags.delete(t) : state.tags.add(t);
+      b.setAttribute('aria-pressed', String(state.tags.has(t)));
+      renderCards();
+    }));
+  }
+
+  function renderCards() {
+    const list = sorted(SK.filter(matches));
+    document.getElementById('count').textContent = `顯示 ${list.length} / ${SK.length} 個`;
+    const ol = document.getElementById('cards');
+    if (!list.length) { ol.innerHTML = `<li class="empty">沒有符合條件的 skill。試著減少標籤，或清除篩選。</li>`; return; }
+    ol.innerHTML = list.map(s => `<li><a class="card" href="#s-${s.slug}">
+        <span class="rk" aria-label="推薦第 ${s.rank} 名">${String(s.rank).padStart(2, '0')}</span>
+        <h3>${esc(s.title)} <code>${esc(s.slug)}</code></h3>
+        <span class="inst">${s.installs ? `<b>${fmt(s.installs)}</b><span>次安裝</span>` : `<span>未上榜</span>`}</span>
+        <p>${esc(s.summary)}</p>
+        <span class="chips"><span class="chip cat">${esc(s.category)}</span>${s.sites.map(x => `<span class="chip site">${esc(x)}</span>`).join('')}${s.tags.slice(0, 4).map(t => `<span class="chip">${esc(t)}</span>`).join('')}</span>
+      </a></li>`).join('');
+  }
+
+  function md(text, s) {
+    if (!text) return '';
+    let html;
+    if (window.marked && window.DOMPurify) html = DOMPurify.sanitize(marked.parse(text, { gfm: true }));
+    else html = `<pre>${esc(text)}</pre>`;
+    const box = document.createElement('div');
+    box.innerHTML = html;
+    if (s) {
+      const dir = `https://github.com/${s.repo}/blob/main/${s.path.replace(/SKILL\.md$/, '')}`;
+      box.querySelectorAll('a[href]').forEach(a => {
+        const h = a.getAttribute('href');
+        if (!/^(https?:|#|mailto:)/i.test(h)) { try { a.href = new URL(h, dir).href; } catch (e) {} }
+        if (!h.startsWith('#')) { a.target = '_blank'; a.rel = 'noopener'; }
+      });
+    }
+    return box.innerHTML;
+  }
+  function split(text) {
+    const m = text.match(/^---\n([\s\S]*?)\n---\n?/);
+    return m ? [m[1], text.slice(m[0].length)] : ['', text];
+  }
+  function docHtml(text, s, label) {
+    const [front, body] = split(text);
+    const desc = label === '中文' ? s.description_zh : s.description_en;
+    return (desc ? `<p class="trig"><b>觸發描述（description）</b>${esc(desc)}</p>` : '') + (front ? `<details class="front"><summary>${label}前置資料（frontmatter）</summary><div class="md"><pre><code>${esc(front)}</code></pre></div></details>` : '') +
+      `<div class="md">${md(body, s)}</div>`;
+  }
+
+  function renderDetail(s) {
+    document.getElementById('app').classList.add('is-detail');
+    const idx = SK.indexOf(s);
+    const prev = SK[idx - 1], next = SK[idx + 1];
+    view.innerHTML = `<article class="detail">
+      <a class="back" href="#">← 回到全部 Skills</a>
+      <div class="dhead">
+        <span class="kicker">推薦第 ${s.rank} 名 · ${esc(s.category)}</span>
+        <h2>${esc(s.title)} <code>${esc(s.slug)}</code></h2>
+        <p class="summary">${esc(s.summary)}</p>
+        <span class="chips" style="display:flex;flex-wrap:wrap;gap:6px">${s.tags.map(t => `<span class="chip">${esc(t)}</span>`).join('')}</span>
+      </div>
+      <dl class="facts">
+        <div><dt>收錄來源</dt><dd>${esc(s.sites.join('、'))}</dd></div>
+        <div><dt>Skills.sh 安裝數</dt><dd>${s.installs ? s.installs.toLocaleString('zh-Hant') + ' 次' : '未在前 600 名'}</dd></div>
+        <div><dt>Skills.sh 全站排名</dt><dd>${s.skillssh_rank ? '#' + s.skillssh_rank : '—'}</dd></div>
+        <div><dt>儲存庫</dt><dd><a href="https://github.com/${esc(s.repo)}" target="_blank" rel="noopener">${esc(s.repo)}</a></dd></div>
+        <div><dt>授權</dt><dd>${esc(s.license)}</dd></div>
+        <div><dt>原始檔</dt><dd><a href="${esc(s.github_url)}" target="_blank" rel="noopener">SKILL.md</a>${s.skillssh_url ? ` · <a href="${esc(s.skillssh_url)}" target="_blank" rel="noopener">skills.sh 頁面</a>` : ''}</dd></div>
+      </dl>
+      <div class="install"><code id="cmd">${esc(installCmd(s))}</code><button type="button" class="btn" id="copy">複製安裝指令</button></div>
+      <h3 class="section-h">用法</h3>
+      <div class="usage md">${md(s.usage)}</div>
+      ${s.redistributable ? `
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" id="t-zh" aria-selected="true" aria-controls="panel">中文翻譯</button>
+        <button type="button" role="tab" id="t-en" aria-selected="false" aria-controls="panel">英文原文</button>
+        <button type="button" role="tab" id="t-both" aria-selected="false" aria-controls="panel">中英對照</button>
+      </div>
+      <div class="panel" id="panel" role="tabpanel"></div>` : `
+      <div class="notice"><strong>原文未轉載。</strong> 這個 skill 的授權（${esc(s.license)}）不允許重新散布，本典藏只提供上方的中文介紹與用法。完整原文請到 <a href="${esc(s.github_url)}" target="_blank" rel="noopener">GitHub 原始檔</a>閱讀。${s.description_en ? `<p class="desc-en">官方描述：${esc(s.description_en)}</p>` : ''}</div>`}
+      <div class="install" style="margin-top:40px">
+        ${prev ? `<a class="btn ghost" href="#s-${prev.slug}">← ${esc(prev.title)}</a>` : ''}
+        ${next ? `<a class="btn ghost" href="#s-${next.slug}">${esc(next.title)} →</a>` : ''}
+      </div>
+    </article>`;
+    document.getElementById('copy').addEventListener('click', () => copy(installCmd(s)));
+    if (s.redistributable) {
+      const panel = document.getElementById('panel');
+      const show = which => {
+        ['zh', 'en', 'both'].forEach(k => document.getElementById('t-' + k).setAttribute('aria-selected', String(k === which)));
+        panel.innerHTML = which === 'zh' ? docHtml(s.translation, s, '中文')
+          : which === 'en' ? docHtml(s.original, s, '原文')
+          : `<div class="compare"><div><h4>中文翻譯</h4>${docHtml(s.translation, s, '中文')}</div><div><h4>英文原文</h4>${docHtml(s.original, s, '原文')}</div></div>`;
+      };
+      ['zh', 'en', 'both'].forEach(k => document.getElementById('t-' + k).addEventListener('click', () => show(k)));
+      show('zh');
+    }
+    window.scrollTo(0, 0);
+  }
+
+  function copy(text) {
+    const done = () => toast('已複製安裝指令');
+    try {
+      navigator.clipboard.writeText(text).then(done, () => selectCmd());
+    } catch (e) { selectCmd(); }
+  }
+  function selectCmd() {
+    const el = document.getElementById('cmd');
+    const r = document.createRange(); r.selectNodeContents(el);
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    toast('已選取指令，請按 Ctrl/⌘ + C 複製');
+  }
+  let tt;
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg; t.hidden = false;
+    clearTimeout(tt); tt = setTimeout(() => { t.hidden = true; }, 2200);
+  }
+
+  let listScroll = 0;
+  function route() {
+    const h = location.hash.replace(/^#/, '');
+    const s = h.startsWith('s-') && bySlug[h.slice(2)];
+    if (s) { if (!document.getElementById('panel') && document.getElementById('cards')) listScroll = scrollY; renderDetail(s); }
+    else { renderList(); window.scrollTo(0, listScroll); }
+  }
+  addEventListener('hashchange', route);
+  route();
+})();
+</script>

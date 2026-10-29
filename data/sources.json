@@ -1,0 +1,402 @@
+[
+ {
+  "slug": "find-skills",
+  "repo": "vercel-labs/skills",
+  "path": "skills/find-skills/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 4,
+  "chars": 4812
+ },
+ {
+  "slug": "grill-me",
+  "repo": "mattpocock/skills",
+  "path": "skills/productivity/grill-me/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 157
+ },
+ {
+  "slug": "hyperframes-cli",
+  "repo": "heygen-com/hyperframes",
+  "path": "skills/hyperframes-cli/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 7123
+ },
+ {
+  "slug": "agent-browser",
+  "repo": "vercel-labs/agent-browser",
+  "path": "skills/agent-browser/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 2,
+  "chars": 2638
+ },
+ {
+  "slug": "hyperframes",
+  "repo": "heygen-com/hyperframes",
+  "path": "skills/hyperframes/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 7164
+ },
+ {
+  "slug": "grill-with-docs",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/grill-with-docs/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 247
+ },
+ {
+  "slug": "improve-codebase-architecture",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 6026
+ },
+ {
+  "slug": "media-use",
+  "repo": "heygen-com/hyperframes",
+  "path": "skills/media-use/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 1,
+  "chars": 4995
+ },
+ {
+  "slug": "tdd",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/tdd/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 3621
+ },
+ {
+  "slug": "reddit-automation",
+  "repo": "flowkit-labs/skills",
+  "path": "reddit-automation/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 7912
+ },
+ {
+  "slug": "design-mobile-apps",
+  "repo": "designed-by-ai/skills",
+  "path": "skills/design-mobile-apps/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 1,
+  "chars": 8338
+ },
+ {
+  "slug": "handoff",
+  "repo": "mattpocock/skills",
+  "path": "skills/productivity/handoff/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 940
+ },
+ {
+  "slug": "frontend-design",
+  "repo": "anthropics/skills",
+  "path": "skills/frontend-design/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 9363
+ },
+ {
+  "slug": "triage",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/triage/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 2,
+  "chars": 6366
+ },
+ {
+  "slug": "prototype",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/prototype/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 2923
+ },
+ {
+  "slug": "domain-modeling",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/domain-modeling/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 2,
+  "chars": 2817
+ },
+ {
+  "slug": "ai-video-generation",
+  "repo": "101-skills/superpowers",
+  "path": "tools/video/ai-video-generation/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 17,
+  "chars": 4656
+ },
+ {
+  "slug": "ai-image-generation",
+  "repo": "101-skills/superpowers",
+  "path": "tools/image/ai-image-generation/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 13,
+  "chars": 3373
+ },
+ {
+  "slug": "teach",
+  "repo": "mattpocock/skills",
+  "path": "skills/productivity/teach/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 9733
+ },
+ {
+  "slug": "diagnosing-bugs",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 8661
+ },
+ {
+  "slug": "vercel-react-best-practices",
+  "repo": "vercel-labs/agent-skills",
+  "path": "skills/react-best-practices/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 1,
+  "chars": 7199
+ },
+ {
+  "slug": "lark-doc",
+  "repo": "larksuite/cli",
+  "path": "skills/lark-doc/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 2559
+ },
+ {
+  "slug": "lark-base",
+  "repo": "larksuite/cli",
+  "path": "skills/lark-base/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 6,
+  "chars": 11878
+ },
+ {
+  "slug": "code-review",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/code-review/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 6691
+ },
+ {
+  "slug": "web-design-guidelines",
+  "repo": "vercel-labs/agent-skills",
+  "path": "skills/web-design-guidelines/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 1,
+  "chars": 1147
+ },
+ {
+  "slug": "to-spec",
+  "repo": "mattpocock/skills",
+  "path": "skills/engineering/to-spec/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 3043
+ },
+ {
+  "slug": "remotion-best-practices",
+  "repo": "remotion-dev/skills",
+  "path": "skills/remotion-best-practices/SKILL.md",
+  "redistributable": false,
+  "code_blocks": 4,
+  "chars": 4125
+ },
+ {
+  "slug": "design-taste-frontend",
+  "repo": "leonxlnx/taste-skill",
+  "path": "skills/taste-skill/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 4,
+  "chars": 38858
+ },
+ {
+  "slug": "caveman",
+  "repo": "juliusbrussee/caveman",
+  "path": "skills/caveman/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 4678
+ },
+ {
+  "slug": "microsoft-foundry",
+  "repo": "microsoft/azure-skills",
+  "path": "skills/microsoft-foundry/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 3,
+  "chars": 30393
+ },
+ {
+  "slug": "azure-diagnostics",
+  "repo": "microsoft/azure-skills",
+  "path": "skills/azure-diagnostics/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 5,
+  "chars": 6402
+ },
+ {
+  "slug": "skill-creator",
+  "repo": "anthropics/skills",
+  "path": "skills/skill-creator/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 13,
+  "chars": 30876
+ },
+ {
+  "slug": "docx",
+  "repo": "anthropics/skills",
+  "path": "skills/docx/SKILL.md",
+  "redistributable": false,
+  "code_blocks": 3,
+  "chars": 5848
+ },
+ {
+  "slug": "pdf",
+  "repo": "anthropics/skills",
+  "path": "skills/pdf/SKILL.md",
+  "redistributable": false,
+  "code_blocks": 18,
+  "chars": 2820
+ },
+ {
+  "slug": "pptx",
+  "repo": "anthropics/skills",
+  "path": "skills/pptx/SKILL.md",
+  "redistributable": false,
+  "code_blocks": 5,
+  "chars": 19511
+ },
+ {
+  "slug": "xlsx",
+  "repo": "anthropics/skills",
+  "path": "skills/xlsx/SKILL.md",
+  "redistributable": false,
+  "code_blocks": 1,
+  "chars": 8471
+ },
+ {
+  "slug": "mcp-builder",
+  "repo": "anthropics/skills",
+  "path": "skills/mcp-builder/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 1,
+  "chars": 10746
+ },
+ {
+  "slug": "webapp-testing",
+  "repo": "anthropics/skills",
+  "path": "skills/webapp-testing/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 4,
+  "chars": 2511
+ },
+ {
+  "slug": "canvas-design",
+  "repo": "anthropics/skills",
+  "path": "skills/canvas-design/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 11937
+ },
+ {
+  "slug": "gh-fix-ci",
+  "repo": "openai/skills",
+  "path": "skills/.curated/gh-fix-ci/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 3651
+ },
+ {
+  "slug": "gh-address-comments",
+  "repo": "openai/skills",
+  "path": "skills/.curated/gh-address-comments/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 1278
+ },
+ {
+  "slug": "playwright",
+  "repo": "openai/skills",
+  "path": "skills/.curated/playwright/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 10,
+  "chars": 2770
+ },
+ {
+  "slug": "security-threat-model",
+  "repo": "openai/skills",
+  "path": "skills/.curated/security-threat-model/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 5557
+ },
+ {
+  "slug": "figma-implement-design",
+  "repo": "openai/skills",
+  "path": "skills/.curated/figma-implement-design/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 2,
+  "chars": 11525
+ },
+ {
+  "slug": "jupyter-notebook",
+  "repo": "openai/skills",
+  "path": "skills/.curated/jupyter-notebook/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 4,
+  "chars": 3634
+ },
+ {
+  "slug": "brainstorming",
+  "repo": "obra/superpowers",
+  "path": "skills/brainstorming/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 0,
+  "chars": 13602
+ },
+ {
+  "slug": "systematic-debugging",
+  "repo": "obra/superpowers",
+  "path": "skills/systematic-debugging/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 1,
+  "chars": 9461
+ },
+ {
+  "slug": "writing-plans",
+  "repo": "obra/superpowers",
+  "path": "skills/writing-plans/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 3,
+  "chars": 8157
+ },
+ {
+  "slug": "using-git-worktrees",
+  "repo": "obra/superpowers",
+  "path": "skills/using-git-worktrees/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 7,
+  "chars": 5796
+ },
+ {
+  "slug": "verification-before-completion",
+  "repo": "obra/superpowers",
+  "path": "skills/verification-before-completion/SKILL.md",
+  "redistributable": true,
+  "code_blocks": 7,
+  "chars": 2621
+ }
+]
