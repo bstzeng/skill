@@ -157,6 +157,17 @@ ol.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .front { font-size: 13px; }
 .front summary { cursor: pointer; color: var(--muted); }
 
+.sitetabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 14px; margin-bottom: 8px; border-bottom: 1px solid var(--line); }
+.sitetabs a { flex: none; text-decoration: none; color: var(--ink); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-weight: 500; white-space: nowrap; }
+.sitetabs a span { color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; margin-left: 2px; }
+.sitetabs a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.sitetabs a[aria-current="page"] span { color: inherit; opacity: .8; }
+.card h3, .card p, .dhead h2, .dhead .summary, .desc-en { overflow-wrap: anywhere; }
+.sitenote { color: var(--muted); margin: 6px 0 18px; max-width: 80ch; }
+.chip.pending { background: transparent; border: 1px dashed var(--muted); color: var(--muted); }
+.card.missing { cursor: default; opacity: .6; border-style: dashed; }
+.card.missing:hover { border-color: var(--line); }
+.is-detail .sitetabs { margin-top: 4px; }
 footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color: var(--muted); font-size: 13px; }
 .toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 8px 16px; border-radius: 8px; font-size: 14px; }
 @media (prefers-reduced-motion: no-preference) { .card { transition: border-color .15s; } }
@@ -165,13 +176,14 @@ footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color
 <div class="wrap" id="app">
   <header class="top">
     <h1><a href="#" style="color:inherit;text-decoration:none">AI Skill 中文典藏</a></h1>
-    <p class="lede">從 Skills.sh 熱門排行、Anthropic 官方、OpenAI Codex 官方與 Awesome Claude 精選清單收錄的 50 個 Agent Skills。每一個都附中文介紹、用法、安裝指令、英文原文與全文中文翻譯。</p>
+    <p class="lede">Skills.sh、Skill Store、Anthropic、OpenAI 與 Awesome Claude 五個來源，各收錄自己的 Top 50（Anthropic 官方共 19 個）。每個 skill 都附中文介紹、用法、安裝指令、英文原文與全文中文翻譯。</p>
     <div class="stats" id="stats"></div>
     <details class="method">
       <summary>收錄方式與資料來源</summary>
       <ul id="method"></ul>
     </details>
   </header>
+  <nav class="sitetabs" id="sitetabs" aria-label="來源網站"></nav>
   <div id="view"></div>
   <footer class="foot" id="foot"></footer>
 </div>
@@ -185,33 +197,46 @@ footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color
   const DATA = JSON.parse(document.getElementById('data').textContent);
   const SK = DATA.skills;
   const bySlug = Object.fromEntries(SK.map(s => [s.slug, s]));
-  const CATS = [...new Set(SK.map(s => s.category))];
-  const SITES = ['Skills.sh', 'Anthropic 官方', 'OpenAI Codex', 'Awesome Claude'];
+  const SITES = DATA.sites;
+  const LISTS = DATA.lists;
+  const SITE_NOTE = {
+    'Skills.sh': '依 skills.sh 首頁「All Time」安裝排行；官網把同一個 skill 的多個鏡像合併成一列，排名數字照官網。',
+    'Skill Store': '依 skillstore.io「Recommended」排序（品質分數）。網站的 Popular 排序沒有下載數資料，因此不採用。',
+    'Anthropic': 'anthropics/skills 官方儲存庫的全部 19 個 skill，依名稱排列。',
+    'OpenAI': 'openai/skills 官方的全部 44 個 skill，加上 openai/plugins 官方外掛市集前 6 個外掛的主要 skill。',
+    'Awesome Claude': '依 ComposioHQ/awesome-claude-skills 清單順序，取前 50 個可在 GitHub 找到 SKILL.md 的項目。'
+  };
+  const label = s => s.title || s.slug;
+  const CATS = [...new Set(SK.map(s => s.category))].sort((a, b) => (a === '待分類') - (b === '待分類'));
   const TAGS = Object.entries(SK.flatMap(s => s.tags).reduce((m, t) => (m[t] = (m[t] || 0) + 1, m), {}))
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh-Hant'));
-  const state = { q: '', full: false, cat: '', site: '', tags: new Set(), sort: 'rank' };
+  const state = { site: '', q: '', full: false, cat: '', tags: new Set(), sort: 'rank' };
   const view = document.getElementById('view');
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  const fmt = n => n == null ? '—' : n >= 10000 ? (n / 10000).toFixed(n >= 1e6 ? 0 : 1) + ' 萬' : n.toLocaleString('zh-Hant');
-  const installCmd = s => `npx skills add https://github.com/${s.repo} --skill ${s.slug}`;
+  const installCmd = s => s.repo ? `npx skills add https://github.com/${s.repo} --skill ${s.path ? s.path.split('/').slice(-2, -1)[0] || s.slug : s.slug}` : '';
+  const entryOf = (site, slug) => (LISTS[site] || []).find(e => e.slug === slug);
 
-  // Stats + method
-  const withInst = SK.filter(s => s.installs).reduce((a, s) => a + s.installs, 0);
+  const done = SK.filter(s => s.translated).length;
   document.getElementById('stats').innerHTML = [
-    [SK.length, '個 Skills'], [CATS.length, '個分類'], [TAGS.length, '個標籤'],
-    [fmt(withInst), 'Skills.sh 累計安裝'], [DATA.updated, '資料日期']
+    [SK.length, '個不重複 Skills'], [SITES.length, '個來源網站'], [done, '個已完成中文'],
+    [TAGS.length, '個標籤'], [DATA.updated, '資料日期']
   ].map(([b, t]) => `<div><b>${esc(b)}</b><span>${esc(t)}</span></div>`).join('');
-  document.getElementById('method').innerHTML = [
-    DATA.method,
-    'Skills.sh 與 SkillsMP、Skill Store 網站本身在收集環境中無法連線；Skills.sh 排行改用 GitHub 上每日更新的開放鏡像資料（LinklyAI/best-skills，CC BY 4.0），SkillsMP 與 Skill Store 暫未收錄。',
-    '原文直接取自各 skill 的 GitHub 儲存庫 SKILL.md；翻譯為繁體中文，程式碼區塊保留原樣。飛書 lark-* 原文為簡體中文，以 OpenCC 轉為台灣繁體。',
-    'Anthropic 的 docx、pdf、pptx、xlsx 為專有授權，Remotion 未標示授權：這 5 個只提供中文介紹與用法，原文請點來源連結閱讀。'
+  document.getElementById('method').innerHTML = SITES.map(s => `<li><b>${esc(s)}</b>：${esc(SITE_NOTE[s])}</li>`).join('') + [
+    '同一個 skill 出現在多個網站時，會在每個網站的清單各列一次，翻譯共用同一份。',
+    '原文取自各 skill 的 GitHub 儲存庫 SKILL.md（Skill Store 依其標示的版本）；翻譯為繁體中文，程式碼區塊保留原樣。簡體中文原文以 OpenCC 轉為台灣繁體。',
+    '未標示授權或授權不允許散布的 skill（例如 Anthropic 的 docx/pdf/pptx/xlsx、Figma 開發者條款），只提供中文介紹與用法，不轉載原文。',
+    '少數項目的原始檔已從來源儲存庫移除，清單中以灰色標示並保留來源連結。SkillsMP 因網站的機器人驗證無法讀取，未收錄。'
   ].map(t => `<li>${esc(t)}</li>`).join('');
-  document.getElementById('foot').innerHTML = `資料整理於 ${esc(DATA.updated)}。各 skill 版權屬原作者，授權見各項目的「授權」欄。排名數字為本典藏的推薦順序；Skills.sh 排名與安裝數為全站歷史累計。`;
+  document.getElementById('foot').innerHTML = `資料整理於 ${esc(DATA.updated)}。各 skill 版權屬原作者，授權見各項目的「授權」欄。排名數字為各來源網站的原始排名。`;
+
+  function renderTabs() {
+    const tabs = [['', '全部', SK.length]].concat(SITES.map(s => [s, s, (LISTS[s] || []).length]));
+    document.getElementById('sitetabs').innerHTML = tabs.map(([v, t, n]) =>
+      `<a href="#${v ? 'site-' + v.toLowerCase().replace(/[^a-z0-9]+/g, '-') : ''}" aria-current="${state.site === v ? 'page' : 'false'}">${esc(t)} <span>${n}</span></a>`).join('');
+  }
 
   function matches(s) {
     if (state.cat && s.category !== state.cat) return false;
-    if (state.site && !s.sites.includes(state.site)) return false;
     for (const t of state.tags) if (!s.tags.includes(t)) return false;
     if (state.q) {
       const q = state.q.toLowerCase();
@@ -221,55 +246,61 @@ footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color
     }
     return true;
   }
-  function sorted(list) {
-    const l = list.slice();
-    if (state.sort === 'installs') l.sort((a, b) => (b.installs || 0) - (a.installs || 0) || a.rank - b.rank);
-    else if (state.sort === 'cat') l.sort((a, b) => CATS.indexOf(a.category) - CATS.indexOf(b.category) || a.rank - b.rank);
-    else if (state.sort === 'name') l.sort((a, b) => a.slug.localeCompare(b.slug));
-    else l.sort((a, b) => a.rank - b.rank);
-    return l;
+  // Rows for the current view: [rank, skill|null, entry|null]
+  function rows() {
+    if (state.site) {
+      return (LISTS[state.site] || []).map(e => [e.rank, e.slug ? bySlug[e.slug] : null, e])
+        .filter(([, s]) => s ? matches(s) : !(state.q || state.cat || state.tags.size));
+    }
+    const list = SK.filter(matches).map(s => [null, s, null]);
+    const best = s => Math.min(...Object.values(s.ranks), 999);
+    if (state.sort === 'cat') list.sort((a, b) => CATS.indexOf(a[1].category) - CATS.indexOf(b[1].category) || best(a[1]) - best(b[1]));
+    else if (state.sort === 'name') list.sort((a, b) => a[1].slug.localeCompare(b[1].slug));
+    else if (state.sort === 'multi') list.sort((a, b) => Object.keys(b[1].ranks).length - Object.keys(a[1].ranks).length || best(a[1]) - best(b[1]));
+    else list.sort((a, b) => best(a[1]) - best(b[1]));
+    return list;
   }
-  const facet = (items, key, label) => `<div class="facet" role="group" aria-label="${label}">
-      <button type="button" data-${key}="" aria-pressed="${!state[key]}"><span>全部</span><span class="n">${SK.length}</span></button>
+
+  const facet = (items, key, lab, total) => `<div class="facet" role="group" aria-label="${lab}">
+      <button type="button" data-${key}="" aria-pressed="${!state[key]}"><span>全部</span><span class="n">${total}</span></button>
       ${items.map(([v, n]) => `<button type="button" data-${key}="${esc(v)}" aria-pressed="${state[key] === v}"><span>${esc(v)}</span><span class="n">${n}</span></button>`).join('')}
     </div>`;
 
   function renderList() {
     document.getElementById('app').classList.remove('is-detail');
-    const catCounts = CATS.map(c => [c, SK.filter(s => s.category === c).length]);
-    const siteCounts = SITES.map(c => [c, SK.filter(s => s.sites.includes(c)).length]);
-    view.innerHTML = `<div class="layout">
+    renderTabs();
+    const pool = state.site ? (LISTS[state.site] || []).map(e => bySlug[e.slug]).filter(Boolean) : SK;
+    const catCounts = CATS.map(c => [c, pool.filter(s => s.category === c).length]).filter(x => x[1]);
+    view.innerHTML = `${state.site ? `<p class="sitenote">${esc(SITE_NOTE[state.site])}</p>` : ''}<div class="layout">
       <aside class="rail">
         <div class="search">
           <h2><label for="q">搜尋</label></h2>
           <input id="q" type="search" placeholder="名稱、標籤、用途…" value="${esc(state.q)}" autocomplete="off">
           <label class="full"><input id="full" type="checkbox" ${state.full ? 'checked' : ''}> 同時搜尋原文與翻譯全文</label>
         </div>
-        <div><h2>分類</h2>${facet(catCounts, 'cat', '分類')}</div>
-        <div><h2>收錄來源</h2>${facet(siteCounts, 'site', '收錄來源')}</div>
+        <div><h2>分類</h2>${facet(catCounts, 'cat', '分類', pool.length)}</div>
         <details class="tagbox" id="tagbox"><summary>標籤（${TAGS.length}）</summary><div class="tagcloud" id="tags">${TAGS.map(([t, n]) => `<button type="button" data-tag="${esc(t)}" aria-pressed="${state.tags.has(t)}" title="${n} 個">${esc(t)}</button>`).join('')}</div></details>
         <button type="button" class="reset" id="reset">清除所有篩選</button>
       </aside>
       <section aria-label="Skill 清單">
         <div class="toolbar"><span class="count" id="count"></span>
-          <label>排序 <select id="sort">
-            <option value="rank">推薦順序</option><option value="installs">Skills.sh 安裝數</option>
-            <option value="cat">分類</option><option value="name">英文名稱</option></select></label>
+          ${state.site ? '' : `<label>排序 <select id="sort">
+            <option value="rank">最佳排名</option><option value="multi">出現在最多網站</option>
+            <option value="cat">分類</option><option value="name">英文名稱</option></select></label>`}
         </div>
         <ol class="cards" id="cards"></ol>
       </section></div>`;
-    document.getElementById('sort').value = state.sort;
+    const sort = document.getElementById('sort');
+    if (sort) { sort.value = state.sort; sort.addEventListener('change', e => { state.sort = e.target.value; renderCards(); }); }
     if (matchMedia('(min-width: 861px)').matches || state.tags.size) document.getElementById('tagbox').open = true;
     renderCards();
     const q = document.getElementById('q');
     q.addEventListener('input', () => { state.q = q.value.trim(); renderCards(); });
     document.getElementById('full').addEventListener('change', e => { state.full = e.target.checked; renderCards(); });
-    document.getElementById('sort').addEventListener('change', e => { state.sort = e.target.value; renderCards(); });
-    document.getElementById('reset').addEventListener('click', () => { Object.assign(state, { q: '', full: false, cat: '', site: '', tags: new Set() }); renderList(); });
-    view.querySelectorAll('[data-cat],[data-site]').forEach(b => b.addEventListener('click', () => {
-      const key = b.hasAttribute('data-cat') ? 'cat' : 'site';
-      state[key] = b.dataset[key];
-      view.querySelectorAll(`[data-${key}]`).forEach(x => x.setAttribute('aria-pressed', String(x.dataset[key] === state[key])));
+    document.getElementById('reset').addEventListener('click', () => { Object.assign(state, { q: '', full: false, cat: '', tags: new Set() }); renderList(); });
+    view.querySelectorAll('[data-cat]').forEach(b => b.addEventListener('click', () => {
+      state.cat = b.dataset.cat;
+      view.querySelectorAll('[data-cat]').forEach(x => x.setAttribute('aria-pressed', String(x.dataset.cat === state.cat)));
       renderCards();
     }));
     view.querySelectorAll('[data-tag]').forEach(b => b.addEventListener('click', () => {
@@ -280,29 +311,47 @@ footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color
     }));
   }
 
+  function metric(site, e) {
+    if (!e) return '';
+    if (site === 'Skills.sh' && e.installs) return `<b>${esc(e.installs)}</b><span>次安裝</span>`;
+    if (site === 'Skill Store' && e.score) return `<b>${e.score} 分</b><span>品質 · ${esc(e.risk)}</span>`;
+    return '';
+  }
+  function siteChips(s) {
+    return SITES.filter(x => s.ranks[x]).map(x => `<span class="chip site">${esc(x)} #${s.ranks[x]}</span>`).join('');
+  }
   function renderCards() {
-    const list = sorted(SK.filter(matches));
-    document.getElementById('count').textContent = `顯示 ${list.length} / ${SK.length} 個`;
+    const list = rows();
+    const total = state.site ? (LISTS[state.site] || []).length : SK.length;
+    document.getElementById('count').textContent = `顯示 ${list.length} / ${total} 個`;
     const ol = document.getElementById('cards');
     if (!list.length) { ol.innerHTML = `<li class="empty">沒有符合條件的 skill。試著減少標籤，或清除篩選。</li>`; return; }
-    ol.innerHTML = list.map(s => `<li><a class="card" href="#s-${s.slug}">
-        <span class="rk" aria-label="推薦第 ${s.rank} 名">${String(s.rank).padStart(2, '0')}</span>
-        <h3>${esc(s.title)} <code>${esc(s.slug)}</code></h3>
-        <span class="inst">${s.installs ? `<b>${fmt(s.installs)}</b><span>次安裝</span>` : `<span>未上榜</span>`}</span>
-        <p>${esc(s.summary)}</p>
-        <span class="chips"><span class="chip cat">${esc(s.category)}</span>${s.sites.map(x => `<span class="chip site">${esc(x)}</span>`).join('')}${s.tags.slice(0, 4).map(t => `<span class="chip">${esc(t)}</span>`).join('')}</span>
-      </a></li>`).join('');
+    ol.innerHTML = list.map(([rank, s, e]) => {
+      if (!s) return `<li><div class="card missing">
+          <span class="rk">${String(rank).padStart(2, '0')}</span>
+          <h3>${esc(e.label)}</h3><span class="inst"></span>
+          <p>這個項目的原始檔已從來源儲存庫移除，無法取得內容。<a href="${esc(e.url)}" target="_blank" rel="noopener">查看來源頁面</a></p></div></li>`;
+      const r = rank ?? Math.min(...Object.values(s.ranks), 999);
+      const site = state.site || SITES.find(x => s.ranks[x] === r) || '';
+      return `<li><a class="card" href="#s-${s.slug}">
+        <span class="rk" aria-label="${esc(site)} 第 ${r} 名">${r < 999 ? String(r).padStart(2, '0') : '—'}</span>
+        <h3>${esc(label(s))} ${s.title ? `<code>${esc(s.slug)}</code>` : ''}</h3>
+        <span class="inst">${state.site ? metric(state.site, e) : ''}</span>
+        <p>${esc(s.summary || s.description_en)}</p>
+        <span class="chips">${s.translated ? `<span class="chip cat">${esc(s.category)}</span>` : '<span class="chip pending">翻譯中</span>'}${siteChips(s)}${s.tags.slice(0, 3).map(t => `<span class="chip">${esc(t)}</span>`).join('')}</span>
+      </a></li>`;
+    }).join('');
   }
 
   function md(text, s) {
     if (!text) return '';
     let html;
     if (window.marked && window.DOMPurify) html = DOMPurify.sanitize(marked.parse(text, { gfm: true }));
-    else html = `<pre>${esc(text)}</pre>`;
+    else html = `<pre style="white-space:pre-wrap">${esc(text)}</pre>`;
     const box = document.createElement('div');
     box.innerHTML = html;
-    if (s) {
-      const dir = `https://github.com/${s.repo}/blob/main/${s.path.replace(/SKILL\.md$/, '')}`;
+    if (s && s.repo) {
+      const dir = `https://github.com/${s.repo}/blob/${s.ref || 'main'}/${s.path.replace(/[^/]*$/, '')}`;
       box.querySelectorAll('a[href]').forEach(a => {
         const h = a.getAttribute('href');
         if (!/^(https?:|#|mailto:)/i.test(h)) { try { a.href = new URL(h, dir).href; } catch (e) {} }
@@ -315,36 +364,41 @@ footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color
     const m = text.match(/^---\n([\s\S]*?)\n---\n?/);
     return m ? [m[1], text.slice(m[0].length)] : ['', text];
   }
-  function docHtml(text, s, label) {
+  function docHtml(text, s, lab) {
     const [front, body] = split(text);
-    const desc = label === '中文' ? s.description_zh : s.description_en;
-    return (desc ? `<p class="trig"><b>觸發描述（description）</b>${esc(desc)}</p>` : '') + (front ? `<details class="front"><summary>${label}前置資料（frontmatter）</summary><div class="md"><pre><code>${esc(front)}</code></pre></div></details>` : '') +
+    const desc = lab === '中文' ? s.description_zh : s.description_en;
+    return (desc ? `<p class="trig"><b>觸發描述（description）</b>${esc(desc)}</p>` : '') + (front ? `<details class="front"><summary>${lab}前置資料（frontmatter）</summary><div class="md"><pre><code>${esc(front)}</code></pre></div></details>` : '') +
       `<div class="md">${md(body, s)}</div>`;
   }
 
   function renderDetail(s) {
     document.getElementById('app').classList.add('is-detail');
-    const idx = SK.indexOf(s);
-    const prev = SK[idx - 1], next = SK[idx + 1];
+    renderTabs();
+    const order = state.site ? (LISTS[state.site] || []).map(e => e.slug).filter(Boolean) : SK.map(x => x.slug);
+    const idx = order.indexOf(s.slug);
+    const prev = bySlug[order[idx - 1]], next = bySlug[order[idx + 1]];
+    const sitesHtml = SITES.filter(x => s.ranks[x]).map(x => {
+      const e = entryOf(x, s.slug);
+      const extra = x === 'Skills.sh' && e.installs ? `（${esc(e.installs)} 次安裝）` : x === 'Skill Store' && e.score ? `（品質 ${e.score} 分，風險 ${esc(e.risk)}）` : '';
+      return `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(x)} #${s.ranks[x]}</a>${extra}`;
+    }).join('<br>') || '—';
+    const cmd = installCmd(s);
     view.innerHTML = `<article class="detail">
-      <a class="back" href="#">← 回到全部 Skills</a>
+      <a class="back" href="#${state.site ? 'site-' + state.site.toLowerCase().replace(/[^a-z0-9]+/g, '-') : ''}">← 回到${esc(state.site || '全部')}清單</a>
       <div class="dhead">
-        <span class="kicker">推薦第 ${s.rank} 名 · ${esc(s.category)}</span>
-        <h2>${esc(s.title)} <code>${esc(s.slug)}</code></h2>
-        <p class="summary">${esc(s.summary)}</p>
+        <span class="kicker">${s.translated ? esc(s.category) : '中文翻譯進行中'}</span>
+        <h2>${esc(label(s))} ${s.title ? `<code>${esc(s.slug)}</code>` : ''}</h2>
+        <p class="summary">${esc(s.summary || s.description_en)}</p>
         <span class="chips" style="display:flex;flex-wrap:wrap;gap:6px">${s.tags.map(t => `<span class="chip">${esc(t)}</span>`).join('')}</span>
       </div>
       <dl class="facts">
-        <div><dt>收錄來源</dt><dd>${esc(s.sites.join('、'))}</dd></div>
-        <div><dt>Skills.sh 安裝數</dt><dd>${s.installs ? s.installs.toLocaleString('zh-Hant') + ' 次' : '未在前 600 名'}</dd></div>
-        <div><dt>Skills.sh 全站排名</dt><dd>${s.skillssh_rank ? '#' + s.skillssh_rank : '—'}</dd></div>
-        <div><dt>儲存庫</dt><dd><a href="https://github.com/${esc(s.repo)}" target="_blank" rel="noopener">${esc(s.repo)}</a></dd></div>
+        <div><dt>來源網站排名</dt><dd>${sitesHtml}</dd></div>
+        <div><dt>儲存庫</dt><dd>${s.repo ? `<a href="https://github.com/${esc(s.repo)}" target="_blank" rel="noopener">${esc(s.repo)}</a>` : '—'}</dd></div>
         <div><dt>授權</dt><dd>${esc(s.license)}</dd></div>
-        <div><dt>原始檔</dt><dd><a href="${esc(s.github_url)}" target="_blank" rel="noopener">SKILL.md</a>${s.skillssh_url ? ` · <a href="${esc(s.skillssh_url)}" target="_blank" rel="noopener">skills.sh 頁面</a>` : ''}</dd></div>
+        <div><dt>原始檔</dt><dd>${s.github_url ? `<a href="${esc(s.github_url)}" target="_blank" rel="noopener">SKILL.md</a>` : '—'}</dd></div>
       </dl>
-      <div class="install"><code id="cmd">${esc(installCmd(s))}</code><button type="button" class="btn" id="copy">複製安裝指令</button></div>
-      <h3 class="section-h">用法</h3>
-      <div class="usage md">${md(s.usage)}</div>
+      ${cmd ? `<div class="install"><code id="cmd">${esc(cmd)}</code><button type="button" class="btn" id="copy">複製安裝指令</button></div>` : ''}
+      ${s.usage ? `<h3 class="section-h">用法</h3><div class="usage md">${md(s.usage)}</div>` : ''}
       ${s.redistributable ? `
       <div class="tabs" role="tablist">
         <button type="button" role="tab" id="t-zh" aria-selected="true" aria-controls="panel">中文翻譯</button>
@@ -352,32 +406,31 @@ footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color
         <button type="button" role="tab" id="t-both" aria-selected="false" aria-controls="panel">中英對照</button>
       </div>
       <div class="panel" id="panel" role="tabpanel"></div>` : `
-      <div class="notice"><strong>原文未轉載。</strong> 這個 skill 的授權（${esc(s.license)}）不允許重新散布，本典藏只提供上方的中文介紹與用法。完整原文請到 <a href="${esc(s.github_url)}" target="_blank" rel="noopener">GitHub 原始檔</a>閱讀。${s.description_en ? `<p class="desc-en">官方描述：${esc(s.description_en)}</p>` : ''}</div>`}
+      <div class="notice"><strong>原文未轉載。</strong> 這個 skill 的授權（${esc(s.license)}）沒有允許重新散布，本典藏只提供中文介紹與用法。完整原文請到 <a href="${esc(s.github_url)}" target="_blank" rel="noopener">原始檔</a>閱讀。${s.description_en ? `<p class="desc-en">官方描述：${esc(s.description_en)}</p>` : ''}</div>`}
       <div class="install" style="margin-top:40px">
-        ${prev ? `<a class="btn ghost" href="#s-${prev.slug}">← ${esc(prev.title)}</a>` : ''}
-        ${next ? `<a class="btn ghost" href="#s-${next.slug}">${esc(next.title)} →</a>` : ''}
+        ${prev ? `<a class="btn ghost" href="#s-${prev.slug}">← ${esc(label(prev))}</a>` : ''}
+        ${next ? `<a class="btn ghost" href="#s-${next.slug}">${esc(label(next))} →</a>` : ''}
       </div>
     </article>`;
-    document.getElementById('copy').addEventListener('click', () => copy(installCmd(s)));
+    if (cmd) document.getElementById('copy').addEventListener('click', () => copy(cmd));
     if (s.redistributable) {
       const panel = document.getElementById('panel');
       const show = which => {
         ['zh', 'en', 'both'].forEach(k => document.getElementById('t-' + k).setAttribute('aria-selected', String(k === which)));
-        panel.innerHTML = which === 'zh' ? docHtml(s.translation, s, '中文')
+        const zh = s.translation ? docHtml(s.translation, s, '中文') : `<p class="notice">這個 skill 的中文翻譯還在進行中，先提供英文原文。</p>`;
+        panel.innerHTML = which === 'zh' ? zh
           : which === 'en' ? docHtml(s.original, s, '原文')
-          : `<div class="compare"><div><h4>中文翻譯</h4>${docHtml(s.translation, s, '中文')}</div><div><h4>英文原文</h4>${docHtml(s.original, s, '原文')}</div></div>`;
+          : `<div class="compare"><div><h4>中文翻譯</h4>${zh}</div><div><h4>英文原文</h4>${docHtml(s.original, s, '原文')}</div></div>`;
       };
       ['zh', 'en', 'both'].forEach(k => document.getElementById('t-' + k).addEventListener('click', () => show(k)));
-      show('zh');
+      show(s.translation ? 'zh' : 'en');
     }
     window.scrollTo(0, 0);
   }
 
   function copy(text) {
-    const done = () => toast('已複製安裝指令');
-    try {
-      navigator.clipboard.writeText(text).then(done, () => selectCmd());
-    } catch (e) { selectCmd(); }
+    const ok = () => toast('已複製安裝指令');
+    try { navigator.clipboard.writeText(text).then(ok, () => selectCmd()); } catch (e) { selectCmd(); }
   }
   function selectCmd() {
     const el = document.getElementById('cmd');
@@ -392,12 +445,17 @@ footer.foot { border-top: 1px solid var(--line); padding-block: 24px 40px; color
     clearTimeout(tt); tt = setTimeout(() => { t.hidden = true; }, 2200);
   }
 
+  const SITE_IDS = Object.fromEntries(SITES.map(s => ['site-' + s.toLowerCase().replace(/[^a-z0-9]+/g, '-'), s]));
   let listScroll = 0;
   function route() {
     const h = location.hash.replace(/^#/, '');
     const s = h.startsWith('s-') && bySlug[h.slice(2)];
-    if (s) { if (!document.getElementById('panel') && document.getElementById('cards')) listScroll = scrollY; renderDetail(s); }
-    else { renderList(); window.scrollTo(0, listScroll); }
+    if (s) { if (document.getElementById('cards')) listScroll = scrollY; renderDetail(s); return; }
+    const site = SITE_IDS[h] ?? '';
+    const changed = site !== state.site;
+    state.site = site;
+    if (changed) Object.assign(state, { cat: '', tags: new Set() });
+    renderList(); window.scrollTo(0, changed ? 0 : listScroll);
   }
   addEventListener('hashchange', route);
   route();
