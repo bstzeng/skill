@@ -1,0 +1,1491 @@
+{
+ "Skills.sh": [
+  {
+   "rank": 1,
+   "label": "find-skills",
+   "url": "https://www.skills.sh/vercel-labs/skills/find-skills",
+   "slug": "find-skills",
+   "installs": "4.1M"
+  },
+  {
+   "rank": 2,
+   "label": "grill-me",
+   "url": "https://www.skills.sh/mattpocock/skills/grill-me",
+   "slug": "grill-me",
+   "installs": "1.5M"
+  },
+  {
+   "rank": 3,
+   "label": "hyperframes-cli",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-cli",
+   "slug": "hyperframes-cli",
+   "installs": "1.3M"
+  },
+  {
+   "rank": 4,
+   "label": "agent-browser",
+   "url": "https://www.skills.sh/vercel-labs/agent-browser/agent-browser",
+   "slug": "agent-browser",
+   "installs": "1.3M"
+  },
+  {
+   "rank": 5,
+   "label": "hyperframes",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes",
+   "slug": "hyperframes",
+   "installs": "1.3M"
+  },
+  {
+   "rank": 6,
+   "label": "grill-with-docs",
+   "url": "https://www.skills.sh/mattpocock/skills/grill-with-docs",
+   "slug": "grill-with-docs",
+   "installs": "1.3M"
+  },
+  {
+   "rank": 7,
+   "label": "media-use",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/media-use",
+   "slug": "media-use",
+   "installs": "1.2M"
+  },
+  {
+   "rank": 8,
+   "label": "improve-codebase-architecture",
+   "url": "https://www.skills.sh/mattpocock/skills/improve-codebase-architecture",
+   "slug": "improve-codebase-architecture",
+   "installs": "1.2M"
+  },
+  {
+   "rank": 9,
+   "label": "tdd",
+   "url": "https://www.skills.sh/mattpocock/skills/tdd",
+   "slug": "tdd",
+   "installs": "1.2M"
+  },
+  {
+   "rank": 10,
+   "label": "reddit-automation",
+   "url": "https://www.skills.sh/flowkit-labs/skills/reddit-automation",
+   "slug": "reddit-automation",
+   "installs": "1.2M"
+  },
+  {
+   "rank": 11,
+   "label": "design-mobile-apps",
+   "url": "https://www.skills.sh/designed-by-ai/skills/design-mobile-apps",
+   "slug": "design-mobile-apps",
+   "installs": "1.1M"
+  },
+  {
+   "rank": 12,
+   "label": "hyperframes-registry",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-registry",
+   "slug": "hyperframes-registry",
+   "installs": "1.1M"
+  },
+  {
+   "rank": 13,
+   "label": "setup-matt-pocock-skills",
+   "url": "https://www.skills.sh/mattpocock/skills/setup-matt-pocock-skills",
+   "slug": "setup-matt-pocock-skills",
+   "installs": "1.1M"
+  },
+  {
+   "rank": 14,
+   "label": "handoff",
+   "url": "https://www.skills.sh/mattpocock/skills/handoff",
+   "slug": "handoff",
+   "installs": "1.1M"
+  },
+  {
+   "rank": 15,
+   "label": "frontend-design",
+   "url": "https://www.skills.sh/anthropics/skills/frontend-design",
+   "slug": "frontend-design",
+   "installs": "1.1M"
+  },
+  {
+   "rank": 16,
+   "label": "grilling",
+   "url": "https://www.skills.sh/mattpocock/skills/grilling",
+   "slug": "grilling",
+   "installs": "1.0M"
+  },
+  {
+   "rank": 17,
+   "label": "triage",
+   "url": "https://www.skills.sh/mattpocock/skills/triage",
+   "slug": "triage",
+   "installs": "1.0M"
+  },
+  {
+   "rank": 18,
+   "label": "prototype",
+   "url": "https://www.skills.sh/mattpocock/skills/prototype",
+   "slug": "prototype",
+   "installs": "1.0M"
+  },
+  {
+   "rank": 19,
+   "label": "hyperframes-animation",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-animation",
+   "slug": "hyperframes-animation",
+   "installs": "1.0M"
+  },
+  {
+   "rank": 20,
+   "label": "hyperframes-core",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-core",
+   "slug": "hyperframes-core",
+   "installs": "930.7K"
+  },
+  {
+   "rank": 21,
+   "label": "hyperframes-creative",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-creative",
+   "slug": "hyperframes-creative",
+   "installs": "916.7K"
+  },
+  {
+   "rank": 22,
+   "label": "domain-modeling",
+   "url": "https://www.skills.sh/mattpocock/skills/domain-modeling",
+   "slug": "domain-modeling",
+   "installs": "906.8K"
+  },
+  {
+   "rank": 23,
+   "label": "ai-video-generation",
+   "url": "https://www.skills.sh/101-skills/superpowers/ai-video-generation",
+   "slug": "ai-video-generation",
+   "installs": "3.6M"
+  },
+  {
+   "rank": 27,
+   "label": "teach",
+   "url": "https://www.skills.sh/mattpocock/skills/teach",
+   "slug": "teach",
+   "installs": "888.2K"
+  },
+  {
+   "rank": 28,
+   "label": "codebase-design",
+   "url": "https://www.skills.sh/mattpocock/skills/codebase-design",
+   "slug": "codebase-design",
+   "installs": "880.4K"
+  },
+  {
+   "rank": 29,
+   "label": "diagnosing-bugs",
+   "url": "https://www.skills.sh/mattpocock/skills/diagnosing-bugs",
+   "slug": "diagnosing-bugs",
+   "installs": "863.8K"
+  },
+  {
+   "rank": 30,
+   "label": "vercel-react-best-practices",
+   "url": "https://www.skills.sh/vercel-labs/agent-skills/vercel-react-best-practices",
+   "slug": "vercel-react-best-practices",
+   "installs": "853.0K"
+  },
+  {
+   "rank": 31,
+   "label": "lark-doc",
+   "url": "https://www.skills.sh/site/open.feishu.cn/lark-doc",
+   "slug": "lark-doc",
+   "installs": "12.4M"
+  },
+  {
+   "rank": 46,
+   "label": "ui-taste",
+   "url": "https://www.skills.sh/site/uizze.sh/ui-taste",
+   "slug": "ui-taste",
+   "installs": "828.0K"
+  },
+  {
+   "rank": 47,
+   "label": "lark-openapi-explorer",
+   "url": "https://www.skills.sh/site/open.feishu.cn/lark-openapi-explorer",
+   "slug": "lark-openapi-explorer",
+   "installs": "5.8M"
+  },
+  {
+   "rank": 54,
+   "label": "code-review",
+   "url": "https://www.skills.sh/mattpocock/skills/code-review",
+   "slug": "code-review",
+   "installs": "819.6K"
+  },
+  {
+   "rank": 55,
+   "label": "lark-okr",
+   "url": "https://www.skills.sh/site/open.feishu.cn/lark-okr",
+   "slug": "lark-okr",
+   "installs": "808.7K"
+  },
+  {
+   "rank": 56,
+   "label": "web-design-guidelines",
+   "url": "https://www.skills.sh/vercel-labs/agent-skills/web-design-guidelines",
+   "slug": "web-design-guidelines",
+   "installs": "801.9K"
+  },
+  {
+   "rank": 57,
+   "label": "implement",
+   "url": "https://www.skills.sh/mattpocock/skills/implement",
+   "slug": "implement",
+   "installs": "800.6K"
+  },
+  {
+   "rank": 58,
+   "label": "lark-markdown",
+   "url": "https://www.skills.sh/site/open.feishu.cn/lark-markdown",
+   "slug": "lark-markdown",
+   "installs": "794.5K"
+  },
+  {
+   "rank": 59,
+   "label": "ask-matt",
+   "url": "https://www.skills.sh/mattpocock/skills/ask-matt",
+   "slug": "ask-matt",
+   "installs": "791.6K"
+  },
+  {
+   "rank": 60,
+   "label": "ai-image-generation",
+   "url": "https://www.skills.sh/magentosh/superpowers/ai-image-generation",
+   "slug": "ai-image-generation-magentosh",
+   "installs": "3.2M"
+  },
+  {
+   "rank": 64,
+   "label": "lark-vc-agent",
+   "url": "https://www.skills.sh/site/open.feishu.cn/lark-vc-agent",
+   "slug": "lark-vc-agent",
+   "installs": "771.0K"
+  },
+  {
+   "rank": 65,
+   "label": "hyperframes-keyframes",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-keyframes",
+   "slug": "hyperframes-keyframes",
+   "installs": "754.4K"
+  },
+  {
+   "rank": 66,
+   "label": "wayfinder",
+   "url": "https://www.skills.sh/mattpocock/skills/wayfinder",
+   "slug": "wayfinder",
+   "installs": "745.0K"
+  },
+  {
+   "rank": 67,
+   "label": "to-spec",
+   "url": "https://www.skills.sh/mattpocock/skills/to-spec",
+   "slug": "to-spec",
+   "installs": "741.4K"
+  },
+  {
+   "rank": 68,
+   "label": "lark-apps",
+   "url": "https://www.skills.sh/site/open.feishu.cn/lark-apps",
+   "slug": "lark-apps",
+   "installs": "739.7K"
+  },
+  {
+   "rank": 69,
+   "label": "to-tickets",
+   "url": "https://www.skills.sh/mattpocock/skills/to-tickets",
+   "slug": "to-tickets",
+   "installs": "737.8K"
+  },
+  {
+   "rank": 70,
+   "label": "research",
+   "url": "https://www.skills.sh/mattpocock/skills/research",
+   "slug": "research",
+   "installs": "737.5K"
+  },
+  {
+   "rank": 71,
+   "label": "remotion-best-practices",
+   "url": "https://www.skills.sh/remotion-dev/skills/remotion-best-practices",
+   "slug": "remotion-best-practices",
+   "installs": "709.9K"
+  },
+  {
+   "rank": 72,
+   "label": "design-taste-frontend",
+   "url": "https://www.skills.sh/leonxlnx/taste-skill/design-taste-frontend",
+   "slug": "design-taste-frontend",
+   "installs": "701.3K"
+  },
+  {
+   "rank": 73,
+   "label": "hyperframes-audio",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/hyperframes-audio",
+   "slug": "hyperframes-audio",
+   "installs": "663.5K"
+  },
+  {
+   "rank": 74,
+   "label": "general-video",
+   "url": "https://www.skills.sh/heygen-com/hyperframes/general-video",
+   "slug": "general-video",
+   "installs": "661.4K"
+  },
+  {
+   "rank": 75,
+   "label": "lark-note",
+   "url": "https://www.skills.sh/site/open.feishu.cn/lark-note",
+   "slug": "lark-note",
+   "installs": "611.2K"
+  },
+  {
+   "rank": 76,
+   "label": "caveman",
+   "url": "https://www.skills.sh/juliusbrussee/caveman/caveman",
+   "slug": "caveman",
+   "installs": "600.2K"
+  }
+ ],
+ "Skill Store": [
+  {
+   "rank": 1,
+   "label": "universal-audit",
+   "url": "https://skillstore.io/skills/glenskii-universal-audit",
+   "slug": "universal-audit",
+   "score": 92,
+   "risk": "safe"
+  },
+  {
+   "rank": 2,
+   "label": "gauntlet",
+   "url": "https://skillstore.io/skills/aakashh242-gauntlet",
+   "slug": "gauntlet",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 3,
+   "label": "human-writer",
+   "url": "https://skillstore.io/skills/glenskii-human-writer",
+   "slug": "human-writer",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 4,
+   "label": "python-web-app-security-audit",
+   "url": "https://skillstore.io/skills/glenskii-python-web-app-security-audit",
+   "slug": "python-web-app-security-audit",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 5,
+   "label": "task-state-ledger",
+   "url": "https://skillstore.io/skills/glenskii-task-state-ledger",
+   "slug": "task-state-ledger",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 6,
+   "label": "gpt-series-reasoning-style",
+   "url": "https://skillstore.io/skills/jadeyingwah-gpt-series-reasoning-style",
+   "slug": "gpt-series-reasoning-style",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 7,
+   "label": "qiaomu-campus-resume",
+   "url": "https://skillstore.io/skills/joeseesun-qiaomu-campus-resume",
+   "slug": "qiaomu-campus-resume",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 8,
+   "label": "picture-book-wizard",
+   "url": "https://skillstore.io/skills/kart-io-picture-book-wizard",
+   "slug": "picture-book-wizard",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 9,
+   "label": "serenity-skill",
+   "url": "https://skillstore.io/skills/muxuuu-serenity-skill",
+   "slug": "serenity-skill",
+   "score": 90,
+   "risk": "safe"
+  },
+  {
+   "rank": 10,
+   "label": "video-sync",
+   "url": "https://skillstore.io/skills/eternityspring-video-sync",
+   "slug": "video-sync",
+   "score": 89,
+   "risk": "safe"
+  },
+  {
+   "rank": 11,
+   "label": "content-creator",
+   "url": "https://skillstore.io/skills/alirezarezvani-content-creator",
+   "slug": "content-creator",
+   "score": 88,
+   "risk": "safe"
+  },
+  {
+   "rank": 12,
+   "label": "content-creator",
+   "url": "https://skillstore.io/skills/sickn33-content-creator",
+   "slug": "content-creator-sickn33",
+   "score": 88,
+   "risk": "safe"
+  },
+  {
+   "rank": 13,
+   "label": "tool-discovery",
+   "url": "https://skillstore.io/skills/0xdarkmatter-tool-discovery",
+   "slug": "tool-discovery",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 14,
+   "label": "analyzing-test-quality",
+   "url": "https://skillstore.io/skills/c0ntr0lledcha0s-analyzing-test-quality",
+   "slug": "analyzing-test-quality",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 15,
+   "label": "content-creator",
+   "url": "https://skillstore.io/skills/davila7-content-creator",
+   "slug": "content-creator-davila7",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 16,
+   "label": "latex-posters",
+   "url": "https://skillstore.io/skills/davila7-latex-posters",
+   "slug": "latex-posters",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 17,
+   "label": "dbs-human-dispatch",
+   "url": "https://skillstore.io/skills/dontbesilent2025-dbs-human-dispatch",
+   "slug": "dbs-human-dispatch",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 18,
+   "label": "vibe-video",
+   "url": "https://skillstore.io/skills/immurray-vibe-video",
+   "slug": "vibe-video",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 19,
+   "label": "lark-doc",
+   "url": "https://skillstore.io/skills/larksuite-lark-doc",
+   "slug": "lark-doc",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 20,
+   "label": "viral-short-form",
+   "url": "https://skillstore.io/skills/vyralcontent-viral-short-form",
+   "slug": "viral-short-form",
+   "score": 87,
+   "risk": "safe"
+  },
+  {
+   "rank": 21,
+   "label": "git-advanced",
+   "url": "https://skillstore.io/skills/autumnsgrove-git-advanced",
+   "slug": "git-advanced",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 22,
+   "label": "analyzing-patterns",
+   "url": "https://skillstore.io/skills/c0ntr0lledcha0s-analyzing-patterns",
+   "slug": "analyzing-patterns",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 23,
+   "label": "jest-testing",
+   "url": "https://skillstore.io/skills/c0ntr0lledcha0s-jest-testing",
+   "slug": "jest-testing",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 24,
+   "label": "organizing-with-labels",
+   "url": "https://skillstore.io/skills/c0ntr0lledcha0s-organizing-with-labels",
+   "slug": "organizing-with-labels",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 25,
+   "label": "playwright-testing",
+   "url": "https://skillstore.io/skills/c0ntr0lledcha0s-playwright-testing",
+   "slug": "playwright-testing",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 26,
+   "label": "clinical-reports",
+   "url": "https://skillstore.io/skills/davila7-clinical-reports",
+   "slug": "clinical-reports",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 27,
+   "label": "treatment-plans",
+   "url": "https://skillstore.io/skills/davila7-treatment-plans",
+   "slug": "treatment-plans",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 28,
+   "label": "project-planner",
+   "url": "https://skillstore.io/skills/dwsy-project-planner",
+   "slug": "project-planner",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 29,
+   "label": "tarot-reading",
+   "url": "https://skillstore.io/skills/gokimedia-tarot-reading",
+   "slug": "tarot-reading",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 30,
+   "label": "personal-finance-visualizer",
+   "url": "https://skillstore.io/skills/jasonhmy-personal-finance-visualizer",
+   "slug": "personal-finance-visualizer",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 31,
+   "label": "prompt-engineering-patterns",
+   "url": "https://skillstore.io/skills/wshobson-prompt-engineering-patterns",
+   "slug": "prompt-engineering-patterns",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 32,
+   "label": "native-transparent-imagegen",
+   "url": "https://skillstore.io/skills/zseven-w-native-transparent-imagegen",
+   "slug": "native-transparent-imagegen",
+   "score": 86,
+   "risk": "safe"
+  },
+  {
+   "rank": 33,
+   "label": "python-async-patterns",
+   "url": "https://skillstore.io/skills/0xdarkmatter-python-async-patterns",
+   "slug": null,
+   "score": 85,
+   "risk": "safe",
+   "missing": true
+  },
+  {
+   "rank": 34,
+   "label": "python-fastapi-patterns",
+   "url": "https://skillstore.io/skills/0xdarkmatter-python-fastapi-patterns",
+   "slug": null,
+   "score": 85,
+   "risk": "safe",
+   "missing": true
+  },
+  {
+   "rank": 35,
+   "label": "python-typing-patterns",
+   "url": "https://skillstore.io/skills/0xdarkmatter-python-typing-patterns",
+   "slug": null,
+   "score": 85,
+   "risk": "safe",
+   "missing": true
+  },
+  {
+   "rank": 36,
+   "label": "structural-search",
+   "url": "https://skillstore.io/skills/0xdarkmatter-structural-search",
+   "slug": "structural-search",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 37,
+   "label": "testing",
+   "url": "https://skillstore.io/skills/89jobrien-testing",
+   "slug": "testing",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 38,
+   "label": "pptx",
+   "url": "https://skillstore.io/skills/autumnsgrove-pptx",
+   "slug": "pptx-autumnsgrove",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 39,
+   "label": "webapp-testing",
+   "url": "https://skillstore.io/skills/autumnsgrove-webapp-testing",
+   "slug": "webapp-testing-autumnsgrove",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 40,
+   "label": "building-agents",
+   "url": "https://skillstore.io/skills/c0ntr0lledcha0s-building-agents",
+   "slug": "building-agents",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 41,
+   "label": "agent-development",
+   "url": "https://skillstore.io/skills/dami-randle-agent-development",
+   "slug": null,
+   "score": 85,
+   "risk": "safe",
+   "missing": true
+  },
+  {
+   "rank": 42,
+   "label": "diffdock",
+   "url": "https://skillstore.io/skills/davila7-diffdock",
+   "slug": "diffdock",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 43,
+   "label": "exploratory-data-analysis",
+   "url": "https://skillstore.io/skills/davila7-exploratory-data-analysis",
+   "slug": "exploratory-data-analysis",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 44,
+   "label": "scanpy",
+   "url": "https://skillstore.io/skills/davila7-scanpy",
+   "slug": "scanpy",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 45,
+   "label": "higgsfield-faceless-video",
+   "url": "https://skillstore.io/skills/higgsfield-ai-higgsfield-faceless-video",
+   "slug": "higgsfield-faceless-video",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 46,
+   "label": "baoyu-comic",
+   "url": "https://skillstore.io/skills/jimliu-baoyu-comic",
+   "slug": "baoyu-comic",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 47,
+   "label": "iso-13485-certification",
+   "url": "https://skillstore.io/skills/k-dense-ai-iso-13485-certification",
+   "slug": null,
+   "score": 85,
+   "risk": "safe",
+   "missing": true
+  },
+  {
+   "rank": 48,
+   "label": "venue-templates",
+   "url": "https://skillstore.io/skills/k-dense-ai-venue-templates",
+   "slug": "venue-templates",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 49,
+   "label": "lark-sheets",
+   "url": "https://skillstore.io/skills/larksuite-lark-sheets",
+   "slug": "lark-sheets",
+   "score": 85,
+   "risk": "safe"
+  },
+  {
+   "rank": 50,
+   "label": "prompt-engineering-patterns",
+   "url": "https://skillstore.io/skills/sickn33-prompt-engineering-patterns",
+   "slug": "prompt-engineering-patterns-sickn33",
+   "score": 85,
+   "risk": "safe"
+  }
+ ],
+ "Anthropic": [
+  {
+   "rank": 1,
+   "label": "academy-guide",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/academy-guide",
+   "slug": "academy-guide"
+  },
+  {
+   "rank": 2,
+   "label": "algorithmic-art",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+   "slug": "algorithmic-art"
+  },
+  {
+   "rank": 3,
+   "label": "brand-guidelines",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+   "slug": "brand-guidelines"
+  },
+  {
+   "rank": 4,
+   "label": "canvas-design",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+   "slug": "canvas-design"
+  },
+  {
+   "rank": 5,
+   "label": "claude-api",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/claude-api",
+   "slug": "claude-api"
+  },
+  {
+   "rank": 6,
+   "label": "discernment-nudge",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/discernment-nudge",
+   "slug": "discernment-nudge"
+  },
+  {
+   "rank": 7,
+   "label": "doc-coauthoring",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+   "slug": "doc-coauthoring"
+  },
+  {
+   "rank": 8,
+   "label": "docx",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+   "slug": "docx"
+  },
+  {
+   "rank": 9,
+   "label": "frontend-design",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+   "slug": "frontend-design"
+  },
+  {
+   "rank": 10,
+   "label": "internal-comms",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+   "slug": "internal-comms"
+  },
+  {
+   "rank": 11,
+   "label": "mcp-builder",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+   "slug": "mcp-builder"
+  },
+  {
+   "rank": 12,
+   "label": "pdf",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+   "slug": "pdf"
+  },
+  {
+   "rank": 13,
+   "label": "pptx",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+   "slug": "pptx"
+  },
+  {
+   "rank": 14,
+   "label": "skill-creator",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+   "slug": "skill-creator"
+  },
+  {
+   "rank": 15,
+   "label": "slack-gif-creator",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+   "slug": "slack-gif-creator"
+  },
+  {
+   "rank": 16,
+   "label": "theme-factory",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+   "slug": "theme-factory"
+  },
+  {
+   "rank": 17,
+   "label": "web-artifacts-builder",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+   "slug": "web-artifacts-builder"
+  },
+  {
+   "rank": 18,
+   "label": "webapp-testing",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+   "slug": "webapp-testing"
+  },
+  {
+   "rank": 19,
+   "label": "xlsx",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+   "slug": "xlsx"
+  }
+ ],
+ "OpenAI": [
+  {
+   "rank": 1,
+   "label": "imagegen",
+   "url": "https://github.com/openai/skills/tree/main/skills/.system/imagegen",
+   "slug": "imagegen"
+  },
+  {
+   "rank": 2,
+   "label": "openai-docs",
+   "url": "https://github.com/openai/skills/tree/main/skills/.system/openai-docs",
+   "slug": "openai-docs"
+  },
+  {
+   "rank": 3,
+   "label": "plugin-creator",
+   "url": "https://github.com/openai/skills/tree/main/skills/.system/plugin-creator",
+   "slug": "plugin-creator"
+  },
+  {
+   "rank": 4,
+   "label": "skill-creator",
+   "url": "https://github.com/openai/skills/tree/main/skills/.system/skill-creator",
+   "slug": "skill-creator-openai"
+  },
+  {
+   "rank": 5,
+   "label": "skill-installer",
+   "url": "https://github.com/openai/skills/tree/main/skills/.system/skill-installer",
+   "slug": "skill-installer"
+  },
+  {
+   "rank": 6,
+   "label": "aspnet-core",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/aspnet-core",
+   "slug": "aspnet-core"
+  },
+  {
+   "rank": 7,
+   "label": "chatgpt-apps",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/chatgpt-apps",
+   "slug": "chatgpt-apps"
+  },
+  {
+   "rank": 8,
+   "label": "cli-creator",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/cli-creator",
+   "slug": "cli-creator"
+  },
+  {
+   "rank": 9,
+   "label": "cloudflare-deploy",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/cloudflare-deploy",
+   "slug": "cloudflare-deploy"
+  },
+  {
+   "rank": 10,
+   "label": "define-goal",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/define-goal",
+   "slug": "define-goal"
+  },
+  {
+   "rank": 11,
+   "label": "figma",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma",
+   "slug": "figma"
+  },
+  {
+   "rank": 12,
+   "label": "figma-code-connect-components",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-code-connect-components",
+   "slug": "figma-code-connect-components"
+  },
+  {
+   "rank": 13,
+   "label": "figma-create-design-system-rules",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-create-design-system-rules",
+   "slug": "figma-create-design-system-rules"
+  },
+  {
+   "rank": 14,
+   "label": "figma-create-new-file",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-create-new-file",
+   "slug": "figma-create-new-file"
+  },
+  {
+   "rank": 15,
+   "label": "figma-generate-design",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-generate-design",
+   "slug": "figma-generate-design"
+  },
+  {
+   "rank": 16,
+   "label": "figma-generate-library",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-generate-library",
+   "slug": "figma-generate-library"
+  },
+  {
+   "rank": 17,
+   "label": "figma-implement-design",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-implement-design",
+   "slug": "figma-implement-design"
+  },
+  {
+   "rank": 18,
+   "label": "figma-use",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-use",
+   "slug": "figma-use"
+  },
+  {
+   "rank": 19,
+   "label": "gh-address-comments",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/gh-address-comments",
+   "slug": "gh-address-comments"
+  },
+  {
+   "rank": 20,
+   "label": "gh-fix-ci",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/gh-fix-ci",
+   "slug": "gh-fix-ci"
+  },
+  {
+   "rank": 21,
+   "label": "hatch-pet",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/hatch-pet",
+   "slug": "hatch-pet"
+  },
+  {
+   "rank": 22,
+   "label": "jupyter-notebook",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/jupyter-notebook",
+   "slug": "jupyter-notebook"
+  },
+  {
+   "rank": 23,
+   "label": "linear",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/linear",
+   "slug": "linear"
+  },
+  {
+   "rank": 24,
+   "label": "migrate-to-codex",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/migrate-to-codex",
+   "slug": "migrate-to-codex"
+  },
+  {
+   "rank": 25,
+   "label": "netlify-deploy",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/netlify-deploy",
+   "slug": "netlify-deploy"
+  },
+  {
+   "rank": 26,
+   "label": "notion-knowledge-capture",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-knowledge-capture",
+   "slug": "notion-knowledge-capture"
+  },
+  {
+   "rank": 27,
+   "label": "notion-meeting-intelligence",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-meeting-intelligence",
+   "slug": "notion-meeting-intelligence"
+  },
+  {
+   "rank": 28,
+   "label": "notion-research-documentation",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-research-documentation",
+   "slug": "notion-research-documentation"
+  },
+  {
+   "rank": 29,
+   "label": "notion-spec-to-implementation",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-spec-to-implementation",
+   "slug": "notion-spec-to-implementation"
+  },
+  {
+   "rank": 30,
+   "label": "openai-docs",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/openai-docs",
+   "slug": "openai-docs-openai"
+  },
+  {
+   "rank": 31,
+   "label": "pdf",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/pdf",
+   "slug": "pdf-openai"
+  },
+  {
+   "rank": 32,
+   "label": "playwright",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/playwright",
+   "slug": "playwright"
+  },
+  {
+   "rank": 33,
+   "label": "playwright-interactive",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/playwright-interactive",
+   "slug": "playwright-interactive"
+  },
+  {
+   "rank": 34,
+   "label": "render-deploy",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/render-deploy",
+   "slug": "render-deploy"
+  },
+  {
+   "rank": 35,
+   "label": "screenshot",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/screenshot",
+   "slug": "screenshot"
+  },
+  {
+   "rank": 36,
+   "label": "security-best-practices",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/security-best-practices",
+   "slug": "security-best-practices"
+  },
+  {
+   "rank": 37,
+   "label": "security-ownership-map",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/security-ownership-map",
+   "slug": "security-ownership-map"
+  },
+  {
+   "rank": 38,
+   "label": "security-threat-model",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/security-threat-model",
+   "slug": "security-threat-model"
+  },
+  {
+   "rank": 39,
+   "label": "sentry",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/sentry",
+   "slug": "sentry"
+  },
+  {
+   "rank": 40,
+   "label": "speech",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/speech",
+   "slug": "speech"
+  },
+  {
+   "rank": 41,
+   "label": "transcribe",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/transcribe",
+   "slug": "transcribe"
+  },
+  {
+   "rank": 42,
+   "label": "vercel-deploy",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/vercel-deploy",
+   "slug": "vercel-deploy"
+  },
+  {
+   "rank": 43,
+   "label": "winui-app",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/winui-app",
+   "slug": "winui-app"
+  },
+  {
+   "rank": 44,
+   "label": "yeet",
+   "url": "https://github.com/openai/skills/tree/main/skills/.curated/yeet",
+   "slug": "yeet"
+  },
+  {
+   "rank": 45,
+   "label": "canva-brand-check",
+   "url": "https://github.com/openai/plugins/tree/main/plugins/canva/skills/canva-brand-check",
+   "slug": "canva-brand-check",
+   "plugin": "canva"
+  },
+  {
+   "rank": 46,
+   "label": "figma-code-connect",
+   "url": "https://github.com/openai/plugins/tree/main/plugins/figma/skills/figma-code-connect",
+   "slug": "figma-code-connect",
+   "plugin": "figma"
+  },
+  {
+   "rank": 47,
+   "label": "connect-recommend",
+   "url": "https://github.com/openai/plugins/tree/main/plugins/stripe/skills/connect-recommend",
+   "slug": "connect-recommend",
+   "plugin": "stripe"
+  },
+  {
+   "rank": 48,
+   "label": "agent-browser",
+   "url": "https://github.com/openai/plugins/tree/main/plugins/vercel/skills/agent-browser",
+   "slug": "agent-browser-openai",
+   "plugin": "vercel"
+  },
+  {
+   "rank": 49,
+   "label": "game-studio",
+   "url": "https://github.com/openai/plugins/tree/main/plugins/game-studio/skills/game-studio",
+   "slug": "game-studio",
+   "plugin": "game-studio"
+  },
+  {
+   "rank": 50,
+   "label": "brainstorming",
+   "url": "https://github.com/openai/plugins/tree/main/plugins/superpowers/skills/brainstorming",
+   "slug": "brainstorming-openai",
+   "plugin": "superpowers"
+  }
+ ],
+ "Awesome Claude": [
+  {
+   "rank": 1,
+   "label": "docx",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+   "slug": "docx"
+  },
+  {
+   "rank": 2,
+   "label": "pdf",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+   "slug": "pdf"
+  },
+  {
+   "rank": 3,
+   "label": "pptx",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+   "slug": "pptx"
+  },
+  {
+   "rank": 4,
+   "label": "xlsx",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+   "slug": "xlsx"
+  },
+  {
+   "rank": 5,
+   "label": "Markdown to EPUB Converter",
+   "url": "https://github.com/smerchek/claude-epub-skill",
+   "slug": "markdown-to-epub"
+  },
+  {
+   "rank": 6,
+   "label": "Master Claude for Legal",
+   "url": "https://github.com/sboghossian/master-claude-for-legal",
+   "slug": "master-claude-for-legal"
+  },
+  {
+   "rank": 7,
+   "label": "artifacts-builder",
+   "url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+   "slug": "web-artifacts-builder"
+  },
+  {
+   "rank": 8,
+   "label": "aws-skills",
+   "url": "https://github.com/zxkane/aws-skills",
+   "slug": null,
+   "missing": true
+  },
+  {
+   "rank": 9,
+   "label": "building-blog",
+   "url": "https://github.com/BuildShipGrowRepeat/nextjs-sanity-blog-skill",
+   "slug": "building-blog"
+  },
+  {
+   "rank": 10,
+   "label": "Changelog Generator",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/changelog-generator",
+   "slug": "changelog-generator"
+  },
+  {
+   "rank": 11,
+   "label": "Claude Code Terminal Title",
+   "url": "https://github.com/bluzername/claude-code-terminal-title",
+   "slug": "terminal-title"
+  },
+  {
+   "rank": 12,
+   "label": "Connect",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/connect",
+   "slug": "connect"
+  },
+  {
+   "rank": 13,
+   "label": "D3.js Visualization",
+   "url": "https://github.com/chrisvoncsefalvay/claude-d3js-skill",
+   "slug": "d3-js-visualization"
+  },
+  {
+   "rank": 14,
+   "label": "FFUF Web Fuzzing",
+   "url": "https://github.com/jthack/ffuf_claude_skill",
+   "slug": "ffuf-skill"
+  },
+  {
+   "rank": 15,
+   "label": "finishing-a-development-branch",
+   "url": "https://github.com/obra/superpowers/tree/main/skills/finishing-a-development-branch",
+   "slug": "finishing-a-development-branch"
+  },
+  {
+   "rank": 16,
+   "label": "Full-Page Screenshot",
+   "url": "https://github.com/LewisLiu007/full-page-screenshot",
+   "slug": "full-page-screenshot"
+  },
+  {
+   "rank": 17,
+   "label": "great_cto",
+   "url": "https://github.com/avelikiy/great_cto",
+   "slug": "great-cto"
+  },
+  {
+   "rank": 18,
+   "label": "iOS Simulator",
+   "url": "https://github.com/conorluddy/ios-simulator-skill",
+   "slug": "ios-simulator-skill"
+  },
+  {
+   "rank": 19,
+   "label": "jules",
+   "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/jules",
+   "slug": "jules"
+  },
+  {
+   "rank": 20,
+   "label": "LangSmith Fetch",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/langsmith-fetch",
+   "slug": "langsmith-fetch"
+  },
+  {
+   "rank": 21,
+   "label": "lean-ctx",
+   "url": "https://github.com/yvgude/lean-ctx",
+   "slug": "lean-ctx"
+  },
+  {
+   "rank": 22,
+   "label": "MCP Builder",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/mcp-builder",
+   "slug": "mcp-builder-composiohq"
+  },
+  {
+   "rank": 23,
+   "label": "move-code-quality-skill",
+   "url": "https://github.com/1NickPappas/move-code-quality-skill",
+   "slug": "move-code-quality-skill"
+  },
+  {
+   "rank": 24,
+   "label": "OpenWeb",
+   "url": "https://github.com/openweb-org/openweb",
+   "slug": "openweb"
+  },
+  {
+   "rank": 25,
+   "label": "overkill",
+   "url": "https://github.com/santiago-vargas-de-kruijf/claude-overkill",
+   "slug": "overkill"
+  },
+  {
+   "rank": 26,
+   "label": "Playwright Browser Automation",
+   "url": "https://github.com/lackeyjb/playwright-skill",
+   "slug": "playwright-skill"
+  },
+  {
+   "rank": 27,
+   "label": "prompt-engineering",
+   "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/customaize-agent/skills/prompt-engineering",
+   "slug": "prompt-engineering"
+  },
+  {
+   "rank": 28,
+   "label": "pypict-claude-skill",
+   "url": "https://github.com/omkamal/pypict-claude-skill",
+   "slug": "pypict-claude-skill"
+  },
+  {
+   "rank": 29,
+   "label": "reddit-fetch",
+   "url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/reddit-fetch",
+   "slug": "reddit-fetch"
+  },
+  {
+   "rank": 30,
+   "label": "Skill Creator",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-creator",
+   "slug": "skill-creator-composiohq"
+  },
+  {
+   "rank": 31,
+   "label": "Skill Seekers",
+   "url": "https://github.com/yusufkaraaslan/Skill_Seekers",
+   "slug": null,
+   "missing": true
+  },
+  {
+   "rank": 32,
+   "label": "software-architecture",
+   "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/ddd/skills/software-architecture",
+   "slug": null,
+   "missing": true
+  },
+  {
+   "rank": 33,
+   "label": "subagent-driven-development",
+   "url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/plugins/sadd/skills/subagent-driven-development",
+   "slug": "subagent-driven-development"
+  },
+  {
+   "rank": 34,
+   "label": "test-driven-development",
+   "url": "https://github.com/obra/superpowers/tree/main/skills/test-driven-development",
+   "slug": "test-driven-development"
+  },
+  {
+   "rank": 35,
+   "label": "using-git-worktrees",
+   "url": "https://github.com/obra/superpowers/blob/main/skills/using-git-worktrees/",
+   "slug": "using-git-worktrees"
+  },
+  {
+   "rank": 36,
+   "label": "Webapp Testing",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/webapp-testing",
+   "slug": "webapp-testing"
+  },
+  {
+   "rank": 37,
+   "label": "CSV Data Summarizer",
+   "url": "https://github.com/coffeefuelbump/csv-data-summarizer-claude-skill",
+   "slug": "csv-data-summarizer"
+  },
+  {
+   "rank": 38,
+   "label": "deep-research",
+   "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research",
+   "slug": "deep-research"
+  },
+  {
+   "rank": 39,
+   "label": "postgres",
+   "url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres",
+   "slug": "postgres"
+  },
+  {
+   "rank": 40,
+   "label": "recursive-research",
+   "url": "https://github.com/Anjos2/recursive-research",
+   "slug": "recursive-research"
+  },
+  {
+   "rank": 41,
+   "label": "root-cause-tracing",
+   "url": "https://github.com/obra/superpowers/tree/main/skills/root-cause-tracing",
+   "slug": "root-cause-tracing"
+  },
+  {
+   "rank": 42,
+   "label": "Brand Build Skills",
+   "url": "https://github.com/rampstackco/claude-skills",
+   "slug": null,
+   "missing": true
+  },
+  {
+   "rank": 43,
+   "label": "Brand Guidelines",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/brand-guidelines",
+   "slug": "brand-guidelines"
+  },
+  {
+   "rank": 44,
+   "label": "Competitive Ads Extractor",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/competitive-ads-extractor",
+   "slug": "competitive-ads-extractor"
+  },
+  {
+   "rank": 45,
+   "label": "Domain Name Brainstormer",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/domain-name-brainstormer",
+   "slug": "domain-name-brainstormer"
+  },
+  {
+   "rank": 46,
+   "label": "Internal Comms",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/internal-comms",
+   "slug": "internal-comms"
+  },
+  {
+   "rank": 47,
+   "label": "Lead Research Assistant",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/lead-research-assistant",
+   "slug": "lead-research-assistant"
+  },
+  {
+   "rank": 48,
+   "label": "article-extractor",
+   "url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor",
+   "slug": "article-extractor"
+  },
+  {
+   "rank": 49,
+   "label": "brainstorming",
+   "url": "https://github.com/obra/superpowers/tree/main/skills/brainstorming",
+   "slug": "brainstorming"
+  },
+  {
+   "rank": 50,
+   "label": "Content Research Writer",
+   "url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/content-research-writer",
+   "slug": "content-research-writer"
+  }
+ ]
+}
